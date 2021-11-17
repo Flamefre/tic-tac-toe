@@ -94,9 +94,14 @@ function Square(props){
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
-        } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
+        }else{
+           console.log('Moves: '+history.length+' squares length: '+ current.squares.length);
+             if(current.squares.length < history.length ){
+              status = 'Draw' ;
+             }else{
+              status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+             }
+          }
 
       return (
         <div className="game">
